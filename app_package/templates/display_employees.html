@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<fieldset>
+<legend>Display Employee</legend>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>    
+        <th>Age</th>    
+        <th>Education</th>    
+        <th>Role</th>
+    </tr>
+    {% for employee in employees %}
+        <tr>
+            <td>{{employee._id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.ed}}</td>
+            <td>{{employee.role}}</td>    
+        </tr>
+     {% endfor %}
+</table>
+</fieldset>
+<p><a href="{{url_for('menu')}}">Back to Menu</a></p>
+{% endblock %}  
